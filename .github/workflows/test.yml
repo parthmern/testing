@@ -25,4 +25,3 @@ jobs:
       - name: Run tests
         working-directory: 5-express-vitest-prisma
         run: npm run test
-
