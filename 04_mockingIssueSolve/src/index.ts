@@ -13,6 +13,7 @@ const sumInput = z.object({
 
 app.post("/sum", async (req, res) => {
     const parsedResponse = sumInput.safeParse(req.body)
+    console.log(parsedResponse);
     
     if (!parsedResponse.success) {
         return res.status(411).json({
