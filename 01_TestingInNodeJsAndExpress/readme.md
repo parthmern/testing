@@ -29,3 +29,22 @@ app.post("/sum", (req, res) => {
 
 
 ```
+
+### mocking issue  ( solve : mock return values)
+
+```
+  // here we are mocking this
+    const response = await prismaClient.sum.create({
+        data: {
+            a: parsedResponse.data.a,
+            b: parsedResponse.data.b,
+            result: answer
+        }
+    })
+
+    // response.id ID is going to be issue here
+    res.json({
+        answer,
+        id: response.id     // here if we mocking so response object is not going to be received so we are not getting response.id
+    })
+```
